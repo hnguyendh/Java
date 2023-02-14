@@ -16,3 +16,14 @@ if (markBMI > johnBMI) {
 console.log(result);
 result = `Mark's BMI ${markBMI} is higher than John's${johnBMI}!`
 console.log(result);
+
+
+const favorite = Number(prompt("What 's your favorite number"));
+console.log(favorite);
+console.log(typeof favorite );
+
+if (favorite == 23){
+    console.log("Cool! 23 is an amazing number")
+} else {
+    console.log("Nothings!");
+}
