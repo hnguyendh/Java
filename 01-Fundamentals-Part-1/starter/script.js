@@ -60,3 +60,5 @@ if ((avgDolphins > avgKoalas) && Dolphins) {
 } else if (draw && Dolphins && koalas) {
     console.log('draw!')
 }
+
+testLarion
