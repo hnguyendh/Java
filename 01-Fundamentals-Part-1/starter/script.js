@@ -42,7 +42,7 @@ if (shouldDrive) {
 } else {
     console.log('Someone else should drive...');
 } */
-
+/*
 const avgDolphins = (97+112+101)/3;
 const avgKoalas = (109+95+106)/3;
 const Dolphins = avgDolphins >= 100;
@@ -59,6 +59,54 @@ if ((avgDolphins > avgKoalas) && Dolphins) {
     console.log(avgDolphins,avgKoalas,`${winner} is the winner!`);
 } else if (draw && Dolphins && koalas) {
     console.log('draw!')
-}
+} */
 
-testLarion
+// const day = 'friday';
+// switch (day) {
+//     case 'monday':
+//         console.log('Plan course structure');
+//         console.log('Go shopping!');
+//         break;
+//     case 'tuesday':
+//         console.log('Prepare theory videos');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Write code examples');
+//         break;
+//     case 'friday':
+//         console.log('Record videos');
+//         break;
+//     case 'saturday':
+//         console.log('Enjoy the weekend :D');
+//         break;
+//     default:
+//         console.log('Not a valid day!');
+// }
+
+// if (day === 'monday'){
+//     console.log('Plan course structure');
+//     console.log('Go shopping!');
+// } else if (day === 'tuesday'){
+//     console.log('Prepare theory videos');
+// } else if (day ==='wednesday' || day === 'thursday'){
+//     console.log('Write code examples');
+// } else if (day === 'friday') {
+//     console.log('Record videos');
+// } else if (day === 'saturday' || day === 'sunday') {
+//     console.log('Enjoy the weekend :D');
+// } else {
+//     console.log('Not a valid day!');
+// }
+
+const age = 23;
+age >= 18 ? console.log('I would like to drink wine'):
+console.log('I would like to drink water');
+
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink);
+
+const ageStatus = age >= 18 ? 'adult' : 'adolescence';
+console.log(ageStatus);
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
