@@ -98,7 +98,7 @@ if ((avgDolphins > avgKoalas) && Dolphins) {
 // } else {
 //     console.log('Not a valid day!');
 // }
-
+/*
 const age = 23;
 age >= 18 ? console.log('I would like to drink wine'):
 console.log('I would like to drink water');
@@ -110,3 +110,12 @@ const ageStatus = age >= 18 ? 'adult' : 'adolescence';
 console.log(ageStatus);
 
 console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
+*/
+
+let bill ;
+bill = 430
+const tipRate = bill > 300 || bill < 50? '0.2' : '0.15';
+let tip = Number(tipRate)*bill;
+console.log(tip);
+const total = tip + bill;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${total}`)
