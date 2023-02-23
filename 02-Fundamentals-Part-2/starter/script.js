@@ -136,10 +136,15 @@ const hoangArray = [
 const hoangCV = {
     firstName: 'Hoang',
     lastName: 'Nguyen',
-    age: 2023-1997,
+    birthYear: 1997,
     job: 'DE',
-    friend:['Michael','Steven','Peter']
-};
+    friend:['Michael','Steven','Peter'],
+    calcAge: function() {
+        this.age =  2037 - this.birthYear;
+        return this.age;
+    },
+    driverLicense: true
+}
 
 console.log(hoangCV);
 console.log(hoangCV.age);
@@ -148,13 +153,48 @@ const nameKey = 'Name';
 console.log(hoangCV['first'+nameKey]);
 console.log(hoangCV['last'+nameKey]);
 
-const interestedIn = prompt('What do you want to know about me?');
-console.log(hoangCV[interestedIn]);
+// const interestedIn = prompt('What do you want to know about me?');
+// console.log(hoangCV[interestedIn]);
 
-if (hoangCV[interestedIn]){
-    console.log(hoangCV[interestedIn]);
-} else {
-    console.log('Wrong request! Choose again')
-}
+// if (hoangCV[interestedIn]){
+//     console.log(hoangCV[interestedIn]);
+// } else {
+//     console.log('Wrong request! Choose again')
+// }
 
 console.log(`${hoangCV.firstName} has ${(hoangCV.friend).length} friends, and his best friend is called ${(hoangCV.friend)[0]}`);
+
+console.log(hoangCV.calcAge());
+console.log(hoangCV.age);
+
+console.log(`${hoangCV.firstName} is a ${hoangCV.age}-year old ${hoangCV.job}, and he has ${hoangCV.driverLicense? 'a':'no'} driver license `);
+
+// Coding challenges #3
+
+const mark = {
+    fullName:'Mark Miller',
+    mass : 78,
+    height: 1.69,
+    calcBMI: function(){
+        this.BMI = this.mass/this.height**2;
+        return this.BMI;
+    }
+};
+
+const john = {
+    fullName:'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function(){
+        this.BMI = this.mass/this.height**2;
+        return this.BMI;
+    }
+};
+
+mark.calcBMI();
+john.calcBMI();
+if (john.BMI > mark.BMI){
+    console.log(`${john.fullName}'s BMI (${john.BMI}) is higher than ${mark.fullName}'s (${mark.BMI})! `);
+} else if (john.BMI < mark.BMI) {
+    console.log(`${mark.fullName}'s BMI (${mark.BMI}) is higher than ${john.fullName}'s (${john.BMI})! `);
+};
