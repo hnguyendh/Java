@@ -125,3 +125,36 @@ total = [bills[0] + calcTip(bills[0]), bills[1] + calcTip(bills[1]), bills[2] + 
 console.log(bills);
 console.log(tips);
 console.log(total);
+
+const hoangArray = [
+    'hoang',
+    'nguyen',
+    2023-1997,
+    'DE'
+];
+
+const hoangCV = {
+    firstName: 'Hoang',
+    lastName: 'Nguyen',
+    age: 2023-1997,
+    job: 'DE',
+    friend:['Michael','Steven','Peter']
+};
+
+console.log(hoangCV);
+console.log(hoangCV.age);
+
+const nameKey = 'Name';
+console.log(hoangCV['first'+nameKey]);
+console.log(hoangCV['last'+nameKey]);
+
+const interestedIn = prompt('What do you want to know about me?');
+console.log(hoangCV[interestedIn]);
+
+if (hoangCV[interestedIn]){
+    console.log(hoangCV[interestedIn]);
+} else {
+    console.log('Wrong request! Choose again')
+}
+
+console.log(`${hoangCV.firstName} has ${(hoangCV.friend).length} friends, and his best friend is called ${(hoangCV.friend)[0]}`);
