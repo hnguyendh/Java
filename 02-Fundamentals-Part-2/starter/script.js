@@ -59,7 +59,7 @@ function checkWinner(avgDolphins,avgKoalas){
 }
 
 checkWinner(avgDolphins,avgKoalas)*/
-
+/*
 // Array
 
 const friend1 = 'Michael';
@@ -198,3 +198,94 @@ if (john.BMI > mark.BMI){
 } else if (john.BMI < mark.BMI) {
     console.log(`${mark.fullName}'s BMI (${mark.BMI}) is higher than ${john.fullName}'s (${john.BMI})! `);
 };
+
+for (let rep =1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`)
+}
+
+const jonasArray = [
+    'Jonas',
+    'Schmedtmann',
+    2037-1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+const types = [];
+
+for (let i = 0; i < jonasArray.length; i++){
+    console.log(jonasArray[i], typeof jonasArray[i]);
+
+    types[i] = typeof jonasArray[i];
+};
+
+console.log(types)
+
+for (let i = 0; i < jonasArray.length; i++){
+    if (typeof jonasArray[i] !== 'string') continue;
+
+    console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+for (let i = 0; i < jonasArray.length; i++){
+    if (typeof jonasArray[i] === 'number') break;
+
+    console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+for (let i = jonasArray.length - 1; i >= 0; i --){
+    console.log(i, jonasArray[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++){
+    console.log(`----------Starting Exercise ${exercise}`);
+
+    for ( let rep = 1; rep < 6; rep++){
+        console.log(`Lifting weight repetitions ${rep}`);
+    }
+}
+
+*/
+let rep = 1;
+while (rep <= 10){
+    console.log(`Lifting weight repetitions ${rep}`);
+    rep ++;
+}
+
+let dice = Math.trunc(Math.random() * 6);
+while (dice != 6){
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random()*6) +1;
+    if (dice === 6) console.log('Loop is about to end...');
+}
+
+const bills = [22 , 295 , 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+function taxRate(bill){
+    if (bill >= 50 & bill <= 300){
+        tipRate = 0.15;
+    } else {tipRate = 0.2};
+    return tipRate;
+}
+for (i = 0; i < bills.length; i ++){
+    let tip ;
+    tip = (taxRate(bills[i])*bills[i]);
+    tips.push(tip);
+    totals.push(tip+bills[i]);
+}
+console.log(bills);
+console.log(tips);
+console.log(totals);
+
+const calcAverage = function(arr){
+    let sum = 0;
+    for(i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+console.log(calcAverage(bills));
+console.log(calcAverage(tips));
+console.log(calcAverage(totals));
