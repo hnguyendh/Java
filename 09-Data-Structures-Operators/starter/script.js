@@ -145,7 +145,7 @@ console.log(weekdays);
 
 // 2) Functions
 const add = function (...numbers) {
-  let sum;
+  let sum = 0;
   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
   console.log(sum);
 };
@@ -162,3 +162,30 @@ console.log(guest1);
 if (restaurant.orderPizza) {
   restaurant.orderPizza('mushrooms', 'spinach');
 }
+
+const guestsCorrect = restaurant.numGuest ?? 10;
+console.log(guestsCorrect);
+
+const rest1 = {
+  name: 'Capri',
+  numGuest: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Hoang Nguyen',
+};
+
+// rest1.numGuests = rest1.numGuest || 10;
+// rest2.numGuests = rest2.numGuest || 10;
+
+// rest1.numGuest ||= 10;
+// rest2.numGuest ||= 10;
+
+rest1.numGuest ??= 10;
+rest2.numGuest ??= 10;
+
+rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
