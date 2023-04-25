@@ -189,3 +189,194 @@ rest2.owner = rest2.owner && '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
+
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Apple',
+]);
+
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+console.log(orderSet);
+// orderSet.clear();
+console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', ' Waiter'];
+const role = new Set(staff);
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+console.log(rest.get('name'));
+
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+// rest.clear();
+// console.log(rest);
+
+const arr = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest.get(arr));
+
+const question = new Map([
+  ['question', 'What is the date of today?'],
+  [1, 'Thursday'],
+  [2, 'Wednesday'],
+  [3, 'Saturday'],
+  ['correct', 1],
+  [true, 'Correct!!'],
+  [false, 'Try again!'],
+]);
+
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}:${value}`);
+// }
+// const answer = Number(prompt('Your answer'));
+// console.log(answer);
+// console.log(question.get(answer === question.get('correct')));
+
+// console.log([...question]);
+
+// Coding challenge #3
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, 'Substitution'],
+  [47, '⚽ GOAL'],
+  [61, 'Substitution'],
+  [64, '🟨 Yellow card'],
+  [69, '🟥 Red card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🟨 Yellow card'],
+]);
+
+// 1)
+const events = new Set(gameEvents.values());
+console.log(events);
+
+// 2)
+gameEvents.delete(64);
+console.log(gameEvents);
+
+// 3)
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
+
+// 4)
+for (const [time, event] of gameEvents) {
+  console.log(
+    `[${time <= 45 ? 'FIRST HALF' : 'SECOND HALF'}]${time}: ${event}`
+  );
+}
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(plane.indexOf('A'));
+console.log(airline.indexOf('P'));
+console.log(airline.slice(4));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat');
+  else console.log('rear seat!');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('27G');
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// fix capitalization in name
+const passenger = 'NguyEn';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passenger[0].toUpperCase() + passenger.slice(1).toLowerCase();
+console.log(passengerCorrect);
+
+// Comparing email
+const email = 'hello@jonas.io';
+const loginEmail = ' Hello@Jonas.Io \n';
+
+const trimmedLoginEmail = loginEmail.trim();
+console.log(trimmedLoginEmail);
+const normalizeEmail = loginEmail.toLowerCase().trim();
+console.log(normalizeEmail);
+
+// replacing
+const priceGB = '288,97#';
+const priceUS = priceGB.replace('#', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement = 'go home or go final';
+console.log(announcement.replaceAll('go', 'come'));
+console.log(announcement.replace(/go/g, 'come'));
+
+// booleans
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('A'));
+
+const checkLuggage = function (items) {
+  const luggage = items.toLowerCase();
+  if (luggage.includes('knife') || luggage.includes('gun')) {
+    console.log('You are not allowed to on plane!');
+  } else {
+    console.log('Welcome onboard!');
+  }
+};
+
+console.log('a,very,nice,string'.split(','));
+
+const [firstName, lastName] = 'Hoang Nguyen'.split(' ');
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+
+// Padding
+const message = 'go to gate 23!';
+console.log(message.padStart(30, '=').padEnd(35, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(12673612873123));
+console.log(maskCreditCard('6127367812637812638712'));
