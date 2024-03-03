@@ -30,26 +30,78 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-const allSections = document.querySelectorAll('.section');
+const allSections = document.querySelectorAll('section');
 console.log(allSections);
 
-document.getElementById('section--1');
 const allButtons = document.getElementsByTagName('button');
 console.log(allButtons);
 
+console.log(document.getElementsByClassName('btn'));
+// Creating and inserting elements
+// .insertAdjacentHTML
 const message = document.createElement('div');
-message.classList.add('cookie-message');
-message.innerHTML =
-  'We use cookie for improved functionality and analytics. <button class ="btn btn--close-cookie">Got it!</button>';
 const header = document.querySelector('.header');
+message.classList.add('cookie-message');
+message.textContent = 'We use cookie for improved functionality and analytics';
+message.innerHTML =
+  'We use cookie for improved functionality and analytics. <button class ="btn btn--close-cookie"> Got it! </button>';
 header.prepend(message);
-// header.append(message.cloneNode(true));
-// header.after(message);
 
-// Delete elements
-document
-  .querySelector('.btn--close-cookie')
-  .addEventListener('click', function () {
-    message.remove(); // new way to remove
-    // message.parentElement.removeChild(message); // old way to remove child node
-  });
+// Styles
+console.log(getComputedStyle(message).height);
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.id);
+
+// Non-standard
+logo.setAttribute('company', 'bankist');
+console.log(logo.getAttribute('company'));
+
+const link = document.querySelector('.header__img');
+console.log(link.alt);
+
+// Data attributes
+console.log(logo.dataset.versionNumber);
+
+// Classes
+// classlist.add()
+// classlist.toggle()
+// classlist.remove()
+// classlist.contains()
+
+// implementation smooth scrolling
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+btnScrollTo.addEventListener('click', function (e) {
+  e.preventDefault();
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log(
+    'Height/width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  // Scrolling // legacy scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.scrollX,
+  //   s1coords.top + window.scrollY
+  // );
+
+  // window.scrollTo({
+  //   left: s1coords.left + window.scrollX,
+  //   top: s1coords.top + window.scrollY,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
